@@ -1,10 +1,10 @@
-import eslint from '@eslint/js'
+// @ts-check
+import { createConfigForNuxt } from '@nuxt/eslint-config/flat'
 
-export default [
-  eslint.configs.recommended,
-  { ignores: ['**/dist/**', 'release/**'] },
-  {
-    files: ['**/*.mjs'],
-    languageOptions: { globals: { console: 'readonly', process: 'readonly' } },
-  },
-]
+// Lints TypeScript and Vue as well as scripts; works without a Nuxt app.
+export default createConfigForNuxt({
+  features: { tooling: true, stylistic: true },
+}).append({
+  // The fixture breaks template rules on purpose; the tests lint it with the package's own config.
+  ignores: ['**/dist/**', 'release/**', 'test/fixtures/**'],
+})

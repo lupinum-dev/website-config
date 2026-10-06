@@ -9,6 +9,8 @@ minimumReleaseAgeStrict: true
 # Only these dependencies may run install scripts.
 allowBuilds:
   esbuild: true
+  # Its install script only checks for a native binding, which optional dependencies already provide.
+  unrs-resolver: false
 
 overrides:
   # Remove when tsup and bundle-require require esbuild 0.28.1 or newer.
