@@ -14,7 +14,7 @@
   "sideEffects": false,
   "license": "MIT",
   "author": "Lupinum OG <info@lupinum.com> (https://lupinum.com)",
-  "homepage": "https://website-config.lupinum.com",
+  "homepage": "https://github.com/lupinum-dev/website-config#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lupinum-dev/website-config.git"
@@ -34,8 +34,7 @@
     "./eslint": {
       "types": "./dist/eslint.d.ts",
       "import": "./dist/eslint.js"
-    },
-    "./agent-docs": "./dist/agent/AGENTS.md"
+    }
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -48,13 +47,11 @@
   },
   "scripts": {
     "dev": "tsup src/index.ts src/eslint.ts --format esm --dts --watch",
-    "build": "tsup src/index.ts src/eslint.ts --format esm --dts --clean && pnpm docs:build && node scripts/agent-docs.mjs && publint",
+    "build": "tsup src/index.ts src/eslint.ts --format esm --dts --clean && publint",
     "lint": "eslint . && node scripts/lint-changesets.mjs",
     "format": "eslint . --fix",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "docs:dev": "pnpm --dir docs dev",
-    "docs:build": "pnpm --dir docs build",
     "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && node scripts/audit-deps.mjs",
     "changeset": "changeset"
   },
