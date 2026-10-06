@@ -38,7 +38,7 @@ projects read documentation that matches the installed version.
 - Pin GitHub Actions to full commit SHAs. Give each job only the permissions it needs.
 - Keep tooling lean. Add a script, check or workflow only when it guards
   behaviour users rely on or closes a real attack path. Process is not security.
-- Record lasting choices in [DECISIONS.md](DECISIONS.md).
+- Record lasting choices in [internals/decisions.md](internals/decisions.md).
 
 ## Principles
 

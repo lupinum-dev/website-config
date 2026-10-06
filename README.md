@@ -66,11 +66,11 @@ Read the full documentation at [website-config.lupinum.com](https://website-conf
 
 ## Contributing
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md). Run `pnpm verify` before you open a pull request.
+Read [CONTRIBUTING.md](.github/CONTRIBUTING.md). Run `pnpm verify` before you open a pull request.
 
 ## Support and security
 
-Ask questions in the [Lupinum OSS Discord](https://discord.gg/RPH6SeA36N). Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
+Ask questions in the [Lupinum OSS Discord](https://discord.gg/RPH6SeA36N). Report vulnerabilities privately as described in [SECURITY.md](.github/SECURITY.md).
 
 ## License
 
