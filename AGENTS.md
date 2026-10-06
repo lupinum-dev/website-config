@@ -7,16 +7,15 @@ Shared Vite+ and template ESLint configuration for Lupinum Nuxt websites. Publis
 ```bash
 pnpm install
 pnpm dev          # rebuild the package on change
-pnpm docs:dev     # run the documentation site
 pnpm test
 pnpm format       # apply lint fixes
 pnpm verify       # exactly what CI runs: lint, typecheck, test, build, audit
 pnpm changeset    # describe a user-facing change for the next release
 ```
 
-`pnpm build` builds the package, the docs site and `dist/agent/`, a copy of the
-rendered docs that ships as `@lupinum/website-config/agent-docs` so agents in consuming
-projects read documentation that matches the installed version.
+The README is the only documentation; there is no docs site
+([internals/decisions.md](internals/decisions.md)). Agents in consuming projects
+read it and the doc comments from the installed package.
 
 ## Hard rules
 
@@ -38,11 +37,13 @@ projects read documentation that matches the installed version.
 - Pin GitHub Actions to full commit SHAs. Give each job only the permissions it needs.
 - Keep tooling lean. Add a script, check or workflow only when it guards
   behaviour users rely on or closes a real attack path. Process is not security.
-- Record lasting choices in [DECISIONS.md](DECISIONS.md).
+- Record lasting choices in [internals/decisions.md](internals/decisions.md).
 
 ## Principles
 
 - Keep the public API in `src/index.ts` small. Everything exported is a promise
   to users.
-- Update `docs/` in the same pull request as the behaviour it describes.
+- Every export and option has a doc comment with its meaning and default.
+  Errors say how to fix them.
+- Update the README in the same pull request as the behaviour it describes.
 - Test public behaviour, not internals.
